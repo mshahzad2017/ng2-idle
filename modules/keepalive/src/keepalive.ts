@@ -73,10 +73,10 @@ export class Keepalive extends KeepaliveSvc implements OnDestroy {
       this.http.request(this.pingRequest).subscribe((response: HttpResponse<any>) => {
         this.onPingResponse.emit(response);
       },
-        error=>(){
-        console.log('Error Resuming Session.', error);
-       _this.onPingResponse.emit(error);
-       } );
+         error => {
+          console.log('Error Resuming Session.', error);
+          this.onPingResponse.emit(error);
+        });
     }
   }
 
